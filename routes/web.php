@@ -102,45 +102,69 @@ Route::get('tni/{a?}/{b?}/{c?}',function($nama=null, $bb=null, $umur=null)
         $nama = "Nama Anda $nama";
         echo "$nama<br>";
     }
+
     if(isset($bb)){
         $bb = "Berat Badan Anda $bb";
         echo "$bb<br>";
     }
+
     if($bb >= 76 && $bb <= 100){
         echo "Anda Harus Turun Berat Badan<br>";
     }
+
     else if($bb >= 65 && $bb <= 75){
         echo "Anda Harus Turunkan Berat Badan<br>";
     }
+
     else if($bb >= 50 && $bb <= 64){
         echo "Berat Badan Anda Ideal<br>";
     }
+
     else if($bb < 50){
         echo "Anda Kurang Nutrisi<br>";
     }
+
     else if(isset($umur)){
         $umur = "Umur Anda $umur";
         echo "$umur<br>";
     }
+
     else if($umur >= 30 && $umur <= 40 ){
         echo "Maaf Umur Anda Tidak Valid<br>";
     }
+
     else if($umur >= 40 && $umur <= 50 ){
         echo "Jabatan Kerja Anda Jendral<br>";
     }
+
     else if($umur >= 50 && $umur <= 60 ){
         echo "Jabatan Kerja Anda Laksamana<br>";
     }
+    
     elseif($umur >= 40){
         echo "Jabatan Kerja Anda Perwira<br>";
     }
 
 
-    
+
     if(!$nama && !$bb) {
         return "Silahkan Isi Data Terlebih Dahulu";
     
   }
   
+});
+
+// Akses Model Post
+Route::get('testmodel',function()
+{
+    $query = App\post::all();
+    return $query;
+});
+
+// Akses Model Post
+Route::get('testmodel/2',function()
+{
+    $query = App\post::find(1);
+    return $query;
 });
 
