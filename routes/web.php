@@ -168,3 +168,25 @@ Route::get('testmodel/2',function()
     return $query;
 });
 
+
+// Akses model biodata
+Route::get('model/bio',function()
+{
+    $query = App\Data::all()->take(3);return $query;
+});
+// Akses melihat 1 record 3 fiels
+Route::get('lihat-bio/select',function()
+{
+    $query = App\Data::select('nama','alamat','hobi')->first();
+    return $query;
+});
+
+// Akses menambah record
+Route::get('tambah-data/tambah/{nis}/{nama}/{tgl_lahir}/{alamat}/{sekolah}/{hobi}/{umur}',
+        function($nis,$nama,$tgl_lahir,$alamat,$sekolah,$hobi,$umur){
+            $post = new App\Data;
+            $post -> nis=$nis;
+            $post -> nama=$nama;
+            $post -> nis=$nis;
+
+        });

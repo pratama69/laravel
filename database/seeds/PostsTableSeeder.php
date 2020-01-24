@@ -18,6 +18,6 @@ class PostsTableSeeder extends Seeder
             ['title'=>'Membangun Visi Misi Keluarga','content'=>'lorem impus']
         ];
         // masukkan data ke database
-        DB::table('Siswa')->insert($iswa);
+        DB::table('Posts')->insert($posts);
     }
 }

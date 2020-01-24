@@ -17,6 +17,6 @@ class SiswaTableSeeder extends Seeder
         ];
 
          // masukkan data ke database
-         DB::table('Siswa')->insert($iswa);
+         DB::table('Siswa')->insert($Siswa);
     }
 }
