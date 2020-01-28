@@ -189,4 +189,11 @@ Route::get('tambah-data/tambah/{nis}/{nama}/{tgl_lahir}/{alamat}/{sekolah}/{hobi
             $post -> nama=$nama;
             $post -> nis=$nis;
 
-        });
+});
+
+Route::get('latihan1/{a?}/{b?}','LatihanController@pertambahan');
+Route::get('latihan2/{a?}/{b?}','LatihanController@pengurangan');
+Route::get('latihan3/{a?}/{b?}','LatihanController@pembagian');
+Route::get('latihan4/{a?}/{b?}','LatihanController@perkalian');
+Route::get('latihan5/{a?}/{b?}','LatihanController@tambah');
+Route::get('/data-1','LatihanController@loop');
