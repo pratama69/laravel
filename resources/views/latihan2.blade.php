@@ -14,5 +14,28 @@
         <hr>
 
     @endforeach
+
+    foreach($data as $val => $key)
+        {
+            if ($key['Uang_jajan']>=50000) {
+                echo 'Anda Menggunakan Paket A';
+            }
+            elseif ($key['Uang_jajan']>=25000) {
+                echo 'Anda Menggunakan Paket B';
+            }
+            elseif ($key['Uang_jajan']>=10000) {
+                echo 'Anda Menggunakan Paket C';
+            }
+            else{
+                $ta=0;
+                $total=$key['Uang_jajan'];
+            }
+            echo "<br>Nama         :". $key['Nama'].
+                 "<br>Nis      :". $key['Kelas'].
+                 "<br>Tabungan   :". $key['Uang_jajan'].
+                 "<br>Paket Anda :". $ta.
+                 "- Uang Total :". $total.
+                 "<hr>";
+        }
 </body>
 </html>

@@ -216,3 +216,6 @@ Route::get('customer-hapus/{id}','CustomerController@delete');
 Route::get('pass','PracticeController@pass');
 Route::get('pass1','PracticeController@pass1');
 Route::get('pass-tabungan','PracticeController@pass2');
+Route::get('pass-tabungan/{id}','PracticeController@pass3');
+Route::get('siswa','SekolahController@daftar');
+Route::get('siswa1/{id}','SekolahController@sekolah');
